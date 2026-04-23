@@ -189,11 +189,29 @@
 </footer>
 
 <script>
-  document.getElementById('waitlist').addEventListener('submit', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('thanks').classList.remove('hidden');
-  });
+  (function(){
+    const WAITLIST_API = 'https://waitlist-api-sigma.vercel.app/api/waitlist';
+    const PRODUCT = 'answeroo';
+    const form = document.getElementById('waitlist');
+    const thanks = document.getElementById('thanks');
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value.trim();
+      if (!email) return;
+      form.style.display = 'none';
+      thanks.classList.remove('hidden');
+      try {
+        await fetch(WAITLIST_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, product: PRODUCT })
+        });
+      } catch (err) {
+        // Non-fatal: UX stays happy even if network fails.
+        console.warn('waitlist post failed', err);
+      }
+    });
+  })();
 </script>
 
 </body>
