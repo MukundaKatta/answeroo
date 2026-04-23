@@ -1,32 +1,47 @@
 # Answeroo
 
-> The AI receptionist that never sleeps.
+The AI receptionist that never sleeps. Dentists, salons, law firms, trades — an AI that answers every call, books appointments, and sends reminders.
 
-Dentists, salons, law firms, trades. An AI that answers every call, books appointments, and sends reminders.
+**Status:** v0 skeleton — landing page + mocked phone-call demo. Full AI not yet wired.
 
-## What it does
+**Landing:** https://answeroo.vercel.app
 
-- **Answers in one ring** — Never miss a lead again. 24 hours a day, every day of the year.
-- **Books appointments** — Integrates with your calendar and sends SMS confirmations automatically.
-- **Sounds human** — Natural voice. Understands accents. Handles interruptions gracefully.
+---
 
-## Why
+## Stack
 
-Small business. Part of a 20-product exploration of high-demand consumer and SMB markets.
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript (strict) |
+| Styling | Tailwind v4 |
+| Fonts | Inter via `next/font/google` |
+| Hosting | Vercel (zero config) |
+| Waitlist | https://waitlist-api-sigma.vercel.app |
 
-## Status
+## Run locally
 
-Landing page live. Product in planning.
+```bash
+pnpm install
+pnpm dev
+```
 
-- **Live**: https://mukundakatta.github.io/answeroo/
+Open http://localhost:3000.
 
-## Stack (when built)
+## Deploy
 
-- Next.js 16 (App Router)
-- Supabase for auth + data
-- Stripe for payments
-- Deployed on Vercel
+Push to `main` — Vercel picks it up automatically. No environment variables required.
 
-## Local preview
+## Routes
 
-Just open `index.html` in a browser — it is a static landing page with the Tailwind CDN.
+| Route | Description |
+|---|---|
+| `/` | Landing page (original copy + design preserved) |
+| `/try` | v0 phone-call demo — pick a business, type a prompt, get a mocked receptionist reply |
+| `/api/waitlist` | `POST { email }` → forwards to waitlist-api-sigma with `product: "answeroo"` |
+
+## What's next
+
+- Wire real AI (voice model + call handling) behind `/try`
+- Calendar integration for live booking
+- SMS confirmation + reminder pipeline
