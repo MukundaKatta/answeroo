@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Answeroo — The AI receptionist that never sleeps.</title>
+<meta name="description" content="Dentists, salons, law firms, trades. An AI that answers every call, books appointments, and sends reminders.">
+<meta property="og:title" content="Answeroo — The AI receptionist that never sleeps.">
+<meta property="og:description" content="Dentists, salons, law firms, trades. An AI that answers every call, books appointments, and sends reminders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .hero-grad {
+    background: radial-gradient(ellipse at top, var(--tw-gradient-from) 0%, transparent 70%);
+  }
+</style>
+</head>
+<body class="bg-white text-neutral-900 min-h-screen antialiased">
+
+<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+  <a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+    <span class="inline-block h-2.5 w-2.5 rounded-full bg-cyan-500"></span>
+    Answeroo
+  </a>
+  <a href="#waitlist" class="rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700">
+    Get early access
+  </a>
+</nav>
+
+<section class="relative overflow-hidden">
+  <div class="absolute inset-x-0 top-0 -z-10 h-[500px] bg-gradient-to-b from-cyan-100 via-cyan-50 to-transparent opacity-60"></div>
+  <div class="mx-auto max-w-4xl px-6 pt-20 pb-24 text-center sm:pt-28">
+    <p class="mb-5 inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-700">
+      Small business
+    </p>
+    <h1 class="text-5xl font-bold leading-[1.05] tracking-tight text-neutral-900 sm:text-7xl">
+      The AI receptionist that never sleeps.
+    </h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+      Dentists, salons, law firms, trades. An AI that answers every call, books appointments, and sends reminders.
+    </p>
+    <form id="waitlist" class="mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+      <input
+        type="email"
+        placeholder="you@email.com"
+        required
+        class="w-full rounded-full border border-neutral-300 bg-white px-5 py-3.5 text-base placeholder-neutral-400 focus:border-neutral-900 focus:outline-none focus:ring-4 focus:ring-neutral-900/10 sm:w-80"
+      />
+      <button
+        type="submit"
+        class="rounded-full bg-neutral-900 px-7 py-3.5 font-medium text-white transition hover:bg-neutral-700"
+      >
+        Join the waitlist
+      </button>
+    </form>
+    <p id="thanks" class="mt-4 hidden text-sm font-medium text-cyan-700">
+      Thanks. We will ping you the day we launch.
+    </p>
+  </div>
+</section>
+
+<section class="border-y border-neutral-200 bg-neutral-50 py-24">
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 sm:grid-cols-3">
+    
+      <div>
+        <div class="text-3xl">📞</div>
+        <h3 class="mt-4 text-lg font-semibold tracking-tight">Answers in one ring</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Never miss a lead again. 24 hours a day, every day of the year.</p>
+      </div>
+      <div>
+        <div class="text-3xl">📅</div>
+        <h3 class="mt-4 text-lg font-semibold tracking-tight">Books appointments</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Integrates with your calendar and sends SMS confirmations automatically.</p>
+      </div>
+      <div>
+        <div class="text-3xl">🗣️</div>
+        <h3 class="mt-4 text-lg font-semibold tracking-tight">Sounds human</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Natural voice. Understands accents. Handles interruptions gracefully.</p>
+      </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-4xl px-6 py-28 text-center">
+  <h2 class="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+    Sound like something you need?
+  </h2>
+  <p class="mx-auto mt-3 max-w-xl text-neutral-600">
+    Leave your email above. We will be in touch the moment we are ready to show you around.
+  </p>
+  <a
+    href="#waitlist"
+    class="mt-8 inline-block rounded-full bg-cyan-600 px-7 py-3.5 font-medium text-white transition hover:bg-cyan-700"
+  >
+    Reserve my spot
+  </a>
+</section>
+
+<footer class="border-t border-neutral-200">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-sm text-neutral-500">
+    <p class="flex items-center gap-2">
+      <span class="inline-block h-2 w-2 rounded-full bg-cyan-500"></span>
+      Answeroo
+    </p>
+    <p>© 2026</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('waitlist').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('thanks').classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
